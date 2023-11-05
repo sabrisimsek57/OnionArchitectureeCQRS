@@ -1,0 +1,39 @@
+﻿@using Application.Dtos.CourseDto;
+
+
+@model List<ResultCourseDto>
+
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <h6 class="text-primary text-uppercase mb-2">Popüler Kurslar</h6>
+            <h1 class="display-6 mb-4">Kurslarımız, sizin sürüş yeteneklerinizi geliştirmenizi sağlar.</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+  
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
+                        <div class="text-center p-4 pt-0">
+                            <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">@item.CoursePrice TL</div>
+                            <h5 class="mb-3">@item.CourseTitle</h5>
+                            <p>@item.CourseDescription</p>
+                            <ol class="breadcrumb justify-content-center mb-0">
+                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>@item.CourseGrade</li>
+                                <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>@item.CourseTime</li>
+                            </ol>
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="@item.CoursePhoto" alt="">
+                            <div class="courses-overlay">
+                                <a class="btn btn-outline-primary border-2" href="/Default/Index">Ana Sayfa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        
+        </div>
+    </div>
+</div>

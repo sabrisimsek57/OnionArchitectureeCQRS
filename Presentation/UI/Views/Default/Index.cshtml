@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadPartial")
+
+<body>
+    <!-- Spinner Start -->
+    @await Component.InvokeAsync("_SpinnerPartial")
+   <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    @await Component.InvokeAsync("_NavbarPartial")
+   <!-- Navbar End -->
+
+    <!-- Carousel Start -->
+    @await Component.InvokeAsync("_CarouselPartial")
+    <!-- Carousel End -->
+
+
+    <!-- Facts Start -->
+    @await Component.InvokeAsync("_FactsPartial")
+    <!-- Facts End -->
+
+
+    <!-- About Start -->
+    @await Component.InvokeAsync("_AboutPartial")
+     <!-- About End -->
+
+
+    <!-- Courses Start -->
+    @await Component.InvokeAsync("_CoursesPartial")
+    <!-- Courses End -->
+
+
+    <!-- Features Start -->
+    @await Component.InvokeAsync("_FeaturesPartial")
+     <!-- Features End -->
+
+
+    <!-- Team Start -->
+    @await Component.InvokeAsync("_TeamPartial")
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    @await Component.InvokeAsync("_TestimonialPartial")
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    @await Component.InvokeAsync("_FooterPartial")
+     <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    @await Component.InvokeAsync("_CopyrightPartial")
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+   
+
+    @await Component.InvokeAsync("_ScriptPartial")
+   
+</body>
+</html>

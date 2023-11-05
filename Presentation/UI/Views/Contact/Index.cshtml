@@ -1,0 +1,133 @@
+﻿@using Application.Dtos.ContactDto;
+
+ @model CreateContactDto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadPartial")
+
+<body>
+    <!-- Spinner Start -->
+    @await Component.InvokeAsync("_SpinnerPartial")
+    <!-- Spinner End -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <h2 class="m-0"><i class="fa fa-car text-primary me-2"></i>Yıldırım Sürücü Kursu</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/Default/Index" class="nav-item nav-link ">Ana Sayfa</a>
+                <a href="/About/Index" class="nav-item nav-link">Hakkında</a>
+                <a href="/Course/Index" class="nav-item nav-link">Kursalar</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Sayfalar</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="/Feature/Index" class="dropdown-item">Özellikler</a>
+                        <a href="/Appointment/Index" class="dropdown-item">Randevu</a>
+                        <a href="/Team/Index" class="dropdown-item">Çalışanlar</a>
+                        <a href="/Testimonial/Index" class="dropdown-item ">Referanslar</a>
+
+                    </div>
+                </div>
+                <a href="/Contact/Index" class="nav-item nav-link active">Bize Ulaşın</a>
+            </div>
+            <a href="/Default/Index" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Ana Sayfa<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+
+    <!-- Navbar End -->
+    <!-- Carousel Start -->
+    <!-- Page Header Start -->
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Bize Ulaşın</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Ana Sayfa</a></li>
+
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Bize Ulaşın</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Team Start -->
+    <!-- Testimonial Start -->
+    <!-- Contact Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px;">
+                    <div class="position-relative h-100">
+                        <iframe class="position-relative w-100 h-100"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.1155059597336!2d28.99149560656169!3d41.04460309962001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cace33ccb7fddb%3A0x31f77c9ec9e157a3!2zxLBCQiBNYcOna2EgRGVtb2tyYXNpIFBhcmvEsQ!5e0!3m2!1str!2str!4v1699906617056!5m2!1str!2str"
+                                frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <h6 class="text-primary text-uppercase mb-2">Bize Ulaşın</h6>
+                    <h1 class="display-6 mb-4">Eğer herhangi bir sorunuz varsa, lütfen bize ulaşın.</h1>
+                    <p class="mb-4">Herhangi bir sorun, öneri veya yardım talebiniz varsa, lütfen çekinmeden bizimle iletişime geçin. Size en iyi şekilde yardımcı olabilmek için buradayız. </p>
+                    <form action="/Contact/Index" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" asp-for="ContactNameSurname" class="form-control  border-0 bg-light" />
+                                    <label for="name">Adınız</label>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" asp-for="ContactMail" class="form-control  border-0 bg-light " />
+                                    <label for="email">E-posta adresiniz</label>
+                                  
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" asp-for="ContactSubject" class="form-control  border-0 bg-light" />
+                                    <label for="subject">Konu</label>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="ContactMessage" asp-for="ContactMessage" style="height: 150px"></textarea>
+                                    <label for="message">Mesaj</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-5" type="submit">Gönder Mesajı</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+    <!-- Testimonial End -->
+    <!-- Team End -->
+    @await Component.InvokeAsync("_FooterPartial")
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    @await Component.InvokeAsync("_CopyrightPartial")
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    @await Component.InvokeAsync("_ScriptPartial")
+
+</body>
+</html>
